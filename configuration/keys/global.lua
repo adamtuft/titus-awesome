@@ -14,61 +14,54 @@ local globalKeys =
   -- Tag browsing
   awful.key({modkey}, 'w', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
   awful.key({modkey}, 's', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Up', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
-  awful.key({altkey, 'Control'}, 'Down', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
+  awful.key({modkey}, 'Left', awful.tag.viewprev, {description = 'view previous', group = 'tag'}),
+  awful.key({modkey}, 'Right', awful.tag.viewnext, {description = 'view next', group = 'tag'}),
   awful.key({modkey}, 'Escape', awful.tag.history.restore, {description = 'go back', group = 'tag'}),
   -- Default client focus
   awful.key(
-    {modkey},
-    'd',
+    {modkey}, 'd',
     function()
       awful.client.focus.byidx(1)
     end,
     {description = 'Focus next by index', group = 'client'}
   ),
   awful.key(
-    {modkey},
-    'a',
+    {modkey}, 'a',
     function()
       awful.client.focus.byidx(-1)
     end,
     {description = 'Focus previous by index', group = 'client'}
   ),
   awful.key(
-    {modkey},
-    'r',
+    {modkey}, 'r',
     function()
       awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
     end,
     {description = 'Main menu', group = 'awesome'}
   ),
   awful.key(
-    {altkey},
-    'space',
+    {altkey}, 'space',
     function()
       awful.spawn('rofi -combi-modi window,drun -show combi -modi combi')
     end,
     {description = 'Show main menu', group = 'awesome'}
   ),
   awful.key(
-    {modkey, 'Shift'},
-    'r',
+    {modkey, 'Ctrl'}, 'r',
     function()
       awful.spawn('reboot')
     end,
     {description = 'Reboot Computer', group = 'awesome'}
   ),
   awful.key(
-    {modkey, 'Shift'},
-    's',
+    {modkey, 'Ctrl'}, 's',
     function()
       awful.spawn('shutdown now')
     end,
     {description = 'Shutdown Computer', group = 'awesome'}
   ),
   awful.key(
-    {modkey, 'Shift'},
-    'l',
+    {modkey, 'Shift'}, 'l',
     function()
       _G.exit_screen_show()
     end,
@@ -76,8 +69,7 @@ local globalKeys =
   ),
   awful.key({modkey}, 'u', awful.client.urgent.jumpto, {description = 'jump to urgent client', group = 'client'}),
   awful.key(
-    {altkey},
-    'Tab',
+    {altkey}, 'Tab',
     function()
       --awful.client.focus.history.previous()
       awful.client.focus.byidx(1)
@@ -88,8 +80,7 @@ local globalKeys =
     {description = 'Switch to next window', group = 'client'}
   ),
   awful.key(
-    {altkey, 'Shift'},
-    'Tab',
+    {altkey, 'Shift'}, 'Tab',
     function()
       --awful.client.focus.history.previous()
       awful.client.focus.byidx(-1)
@@ -101,16 +92,14 @@ local globalKeys =
   ),
   -- Programms
   awful.key(
-    {modkey},
-    'l',
+    {modkey}, 'l',
     function()
       awful.spawn(apps.default.lock)
     end,
     {description = 'Lock the screen', group = 'awesome'}
   ),
   awful.key(
-    {modkey},
-    'Print',
+    {modkey}, 'Print',
     function()
       awful.util.spawn_with_shell(apps.default.delayed_screenshot)
     end,
@@ -141,8 +130,7 @@ local globalKeys =
     {description = 'Open a text/code editor', group = 'launcher'}
   ),
   awful.key(
-    {modkey},
-    'b',
+    {modkey}, 'Home',
     function()
       awful.util.spawn(apps.default.browser)
     end,
@@ -150,15 +138,14 @@ local globalKeys =
   ),
   -- Standard program
   awful.key(
-    {modkey},
-    'x',
+    {modkey}, 'Return',
     function()
       awful.spawn(apps.default.terminal)
     end,
     {description = 'Open a terminal', group = 'launcher'}
   ),
-  awful.key({modkey, 'Control'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
-  awful.key({modkey, 'Control'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
+  awful.key({modkey, 'Shift'}, 'r', _G.awesome.restart, {description = 'reload awesome', group = 'awesome'}),
+  awful.key({modkey, 'Shift'}, 'q', _G.awesome.quit, {description = 'quit awesome', group = 'awesome'}),
   awful.key(
     {altkey, 'Shift'},
     'Right',
@@ -283,22 +270,22 @@ local globalKeys =
     {description = 'Show weather', group = 'widgets'}
   ),--]]
   -- Brightness
-  awful.key(
-    {},
-    'XF86MonBrightnessUp',
-    function()
-      awful.spawn('xbacklight -inc 10')
-    end,
-    {description = '+10%', group = 'hotkeys'}
-  ),
-  awful.key(
-    {},
-    'XF86MonBrightnessDown',
-    function()
-      awful.spawn('xbacklight -dec 10')
-    end,
-    {description = '-10%', group = 'hotkeys'}
-  ),
+--   awful.key(
+--     {},
+--     'XF86MonBrightnessUp',
+--     function()
+--       awful.spawn('xbacklight -inc 10')
+--     end,
+--     {description = '+10%', group = 'hotkeys'}
+--   ),
+--   awful.key(
+--     {},
+--     'XF86MonBrightnessDown',
+--     function()
+--       awful.spawn('xbacklight -dec 10')
+--     end,
+--     {description = '-10%', group = 'hotkeys'}
+--   ),
   -- ALSA volume control
   awful.key(
     {},
@@ -405,21 +392,11 @@ local globalKeys =
   ),
   -- File Manager
   awful.key(
-    {modkey},
-    'e',
+    {modkey}, 'Insert',
     function()
       awful.util.spawn(apps.default.files)
     end,
     {description = 'filebrowser', group = 'hotkeys'}
-  ),
-  -- Emoji Picker
-  awful.key(
-    {modkey},
-    'a',
-    function()
-      awful.util.spawn_with_shell('ibus emoji')
-    end,
-    {description = 'Open the ibus emoji picker to copy an emoji to your clipboard', group = 'hotkeys'}
   )
 )
 

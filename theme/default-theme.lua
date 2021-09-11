@@ -5,7 +5,7 @@ local gears = require('gears')
 local dpi = require('beautiful').xresources.apply_dpi
 local theme = {}
 theme.icons = theme_dir .. '/icons/'
-theme.font = 'Roboto medium 10'
+theme.font = 'Source Pro 10'
 
 -- Colors Pallets
 
@@ -23,9 +23,10 @@ local awesome_overrides =
   theme.dir = os.getenv('HOME') .. '/.config/awesome/theme'
   theme.icons = theme.dir .. '/icons/'
   --theme.wallpaper = theme.dir .. '/wallpapers/DarkCyan.png'
-  theme.wallpaper = '#e0e0e0'
-  theme.font = 'Roboto medium 10'
-  theme.title_font = 'Roboto medium 14'
+--   theme.wallpaper = '#EF038b'
+--   theme.wallpaper = '/home/adam/.wallpapers/nord-mountains.png'
+  theme.font = 'Source Pro 10'
+  theme.title_font = 'Source Pro 14'
 
   theme.fg_normal = '#ffffffde'
 
@@ -75,14 +76,15 @@ local awesome_overrides =
           ':0.08,' .. theme.accent.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
   theme.taglist_bg_focus =
     'linear:0,0:' ..
-    dpi(40) ..
+    dpi(999) ..
       ',0:0,' ..
-        theme.primary.hue_500 ..
+        -- theme.primary.hue_500 ..
+        mat_colors.teal.hue_900 ..
           ':0.08,' .. theme.primary.hue_500 .. ':0.08,' .. theme.background.hue_800 .. ':1,' .. theme.background.hue_800
 
   -- Tasklist
 
-  theme.tasklist_font = 'Roboto medium 11'
+  theme.tasklist_font = 'Source Pro 11'
   theme.tasklist_bg_normal = theme.background.hue_800
   theme.tasklist_bg_focus =
     'linear:0,0:0,' ..

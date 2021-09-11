@@ -15,11 +15,11 @@ return {
     screenshot = 'flameshot screen -p ~/Pictures',
     region_screenshot = 'flameshot gui -p ~/Pictures',
     delayed_screenshot = 'flameshot screen -p ~/Pictures -d 5000',
-    browser = 'brave-browser',
+    browser = 'firefox',
     editor = 'gedit', -- gui text editor
-    social = 'discord',
+    -- social = 'discord',
     game = rofi_command,
-    files = 'nautilus',
+    files = 'thunar',
     music = rofi_command 
   },
   -- List of apps to start once on start-up
@@ -33,9 +33,13 @@ return {
     'xfce4-power-manager', -- Power manager
      'flameshot',
      'synology-drive -minimized',
-     'steam -silent',
-    'feh --randomize --bg-fill ~/.wallpapers/*',
+    --  'steam -silent',
+    'feh feh --bg-fill ~/.wallpapers/nord-mountains.png',
     '/usr/bin/variety',
+    'dropbox start',
+    'remmina -i',
+
+
     -- Add applications that need to be killed between reloads
     -- to avoid multipled instances, inside the awspawn script
     '~/.config/awesome/configuration/awspawn' -- Spawn "dirty" apps that can linger between sessions

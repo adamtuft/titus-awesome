@@ -24,5 +24,7 @@ return {
   memory = dir .. '/memory.svg',
   harddisk = dir .. '/harddisk.svg',
   thermometer = dir .. '/thermometer.svg',
-  plus = dir .. '/plus.svg'
+  plus = dir .. '/plus.svg',
+  ffox1 = dir .. '/firefox-logo-focus.svg',
+  ffox2 = dir .. '/firefox-logo-glyph.svg'
 }

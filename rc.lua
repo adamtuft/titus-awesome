@@ -47,14 +47,19 @@ _G.client.connect_signal(
 )
 
 -- Enable sloppy focus, so that focus follows mouse.
---[[
+
 _G.client.connect_signal(
   'mouse::enter',
   function(c)
     c:emit_signal('request::activate', 'mouse_enter', {raise = true})
   end
 )
---]]
+
+-- Set some nice touchpad options
+os.execute("xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Tapping Enabled' 1")
+os.execute("xinput --set-prop 'DLL07BE:01 06CB:7A13 Touchpad' 'libinput Natural Scrolling Enabled' 1")
+
+
 
 -- Make the focused window have a glowing border
 _G.client.connect_signal(
